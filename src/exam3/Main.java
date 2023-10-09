@@ -2,13 +2,14 @@ package exam3;
 
 import exam1.ra.util.InputMethods;
 
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    static PriorityQueue<String> priorityQueue = new PriorityQueue<>();
+    static Queue<String> queue = new LinkedList<>();
     public static void main(String[] args) {
         do {
             System.out.println("****************JAVA-HACKATHON-05-ADVANCE-1-MENU***************\n" +
@@ -21,14 +22,14 @@ public class Main {
                 case 1:
                     System.out.print("Nhập tên phụ huynh nộp hồ sơ: ");
                     String inputData = InputMethods.getString();
-                    priorityQueue.offer(inputData);
+                    queue.offer(inputData);
                     break;
                 case 2:
-                    if (priorityQueue.isEmpty()) {
+                    if (queue.isEmpty()) {
                         System.out.println("Hiện tại không có phụ huynh nào nộp hồ sơ");
                         break;
                     }
-                    String firstName = priorityQueue.poll();
+                    String firstName = queue.poll();
                     System.out.println(firstName);
                     break;
                 case 3:
