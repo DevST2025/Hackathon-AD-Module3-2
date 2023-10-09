@@ -24,11 +24,12 @@ public class Main {
                     priorityQueue.offer(inputData);
                     break;
                 case 2:
-                    System.out.println(priorityQueue);
+                    if (priorityQueue.isEmpty()) {
+                        System.out.println("Hiện tại không có phụ huynh nào nộp hồ sơ");
+                        break;
+                    }
                     String firstName = priorityQueue.poll();
                     System.out.println(firstName);
-                    System.out.println(priorityQueue);
-
                     break;
                 case 3:
                     System.out.println("******************END******************");
